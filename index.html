@@ -173,7 +173,7 @@
                     <p>광주광역시 동구 서석동 조선대 5길 65<br>IT융합대학 AISW 교육센터</p>
                     <hr class="my-4">
                     <p>Coded by <a href="https://github.com/swon-04" target="_blank">swon8468@chosun.ac.kr</a></p>
-                    <p><span id="current-year-modal"></span>. 조선대학교 AISW 교육센터 - All right reserved.</p>
+                    <p><span id="current-year-modal"></span>. 조선대학교 AISW 교육센터 All right reserved.</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
@@ -297,6 +297,7 @@
                 confirmButtonText: '확인'
             });
         }
+        
         function showAlert(event, linkElement, textToCopy) {
             event.preventDefault();
             Swal.fire({
@@ -304,11 +305,12 @@
                 html: `
                     <div style="font-size: 16px; line-height: 1.6; color: #444;">
                         <p style="margin-bottom: 15px; font-weight: 500;">
-                            <strong style="color: #2c3e50;">디지털새싹 만족도 조사</strong>를 시작하기 전에,<br>다음 내용을 꼭 확인해주세요:
+                            <strong style="color: #2c3e50;">디지털새싹 만족도 조사</strong>를 시작하기 전,<br>다음 내용을 꼭 확인해주세요
                         </p>
                         <p>문항 2 : 본인 소속 학교명</p>
                         <p>문항 4 : 조선대학교 산학협력단</p>
                         <p>문항 5 : <strong style="color: #e74c3c;">붙여넣기 하면 자동완성</strong></p>
+                        <p>문항 6 : 기본</p>
                     </div>
                 `,
                 icon: 'info',
