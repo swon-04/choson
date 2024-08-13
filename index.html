@@ -275,10 +275,8 @@
                 html: `
                     <div style="font-size: 18px; line-height: 1.6; color: #444;">
                         <div class="form-group">
-                            <label for="fontSwitch">폰트 적용</label>
-                            <div class="custom-control custom-switch">
-                                <input type="checkbox" class="custom-control-input" id="fontSwitch" checked onchange="toggleFont(this)">
-                                <label class="custom-control-label" for="fontSwitch" style="font-family: 'Arial', sans-serif; font-size: 18px; line-height: 1.6; color: #444;"></label>
+                            <div class="form-group">
+                                <button type="button" class="btn btn-secondary" onclick="toggleFont(this)">폰트 해제</button>
                             </div>
                         </div>
                         <p style="margin-bottom: 15px; font-weight: 500;">
@@ -365,10 +363,8 @@
             var body = document.body;
             if (checkbox.checked) {
                 body.style.fontFamily = "'Nanum Pen Script', cursive";
-                checkbox.nextElementSibling.innerText = '폰트 적용됨'; // 체크 시 텍스트 변경
             } else {
                 body.style.fontFamily = "initial";
-                checkbox.nextElementSibling.innerText = '폰트 미적용'; // 체크 해제 시 텍스트 변경
             }
         }
 
