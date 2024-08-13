@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -103,35 +102,6 @@
         </div>
     </div>
 
-<div class="modal fade" id="settingsModal" tabindex="-1" role="dialog" aria-labelledby="settingsModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title w-100 text-center" id="settingsModalLabel">설정</h5>
-                </div>
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label for="nightModeSwitch">야간모드 적용</label>
-                        <div class="custom-control custom-switch">
-                            <input type="checkbox" class="custom-control-input" id="nightModeSwitch" onchange="toggleNightMode()">
-                            <label class="custom-control-label" for="nightModeSwitch"></label>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="fontSwitch">폰트 적용</label>
-                        <div class="custom-control custom-switch">
-                            <input type="checkbox" class="custom-control-input" id="fontSwitch" checked onchange="toggleFont()" >
-                            <label class="custom-control-label" for="fontSwitch"></label>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <div class="modal fade" id="settingsModal" tabindex="-1" role="dialog" aria-labelledby="settingsModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -149,7 +119,7 @@
                     <div class="form-group">
                         <label for="fontSwitch">폰트 적용</label>
                         <div class="custom-control custom-switch">
-                            <input type="checkbox" class="custom-control-input" id="fontSwitch" checked onchange="toggleFont()" >
+                            <input type="checkbox" class="custom-control-input" id="fontSwitch" checked onchange="toggleFont(this)">
                             <label class="custom-control-label" for="fontSwitch"></label>
                         </div>
                     </div>
@@ -304,6 +274,13 @@
                 title: '안내사항',
                 html: `
                     <div style="font-size: 18px; line-height: 1.6; color: #444;">
+                        <div class="form-group">
+                            <label for="fontSwitch">폰트 적용</label>
+                            <div class="custom-control custom-switch">
+                                <input type="checkbox" class="custom-control-input" id="fontSwitch" checked onchange="toggleFont(this)">
+                                <label class="custom-control-label" for="fontSwitch" style="font-family: 'Arial', sans-serif; font-size: 18px; line-height: 1.6; color: #444;"></label>
+                            </div>
+                        </div>
                         <p style="margin-bottom: 15px; font-weight: 500;">
                             <strong style="color: #2c3e50;">디지털새싹 만족도 조사</strong>를 시작하기 전,<br>다음 내용을 꼭 확인해주세요
                         </p>
@@ -384,14 +361,14 @@
             }
         }
 
-        function toggleFont() {
+        function toggleFont(checkbox) {
             var body = document.body;
-            var fontSwitch = document.getElementById('fontSwitch');
-            console.log(fontSwitch.checked);
-            if (fontSwitch.checked) {
+            if (checkbox.checked) {
                 body.style.fontFamily = "'Nanum Pen Script', cursive";
+                checkbox.nextElementSibling.innerText = '폰트 적용됨'; // 체크 시 텍스트 변경
             } else {
                 body.style.fontFamily = "initial";
+                checkbox.nextElementSibling.innerText = '폰트 미적용'; // 체크 해제 시 텍스트 변경
             }
         }
 
